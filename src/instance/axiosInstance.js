@@ -18,7 +18,6 @@ authApi.interceptors.request.use(
     return config;
   },
   (err) => {
-    console.log("여기 =============");
     alert(err.response.data.message);
     if (
       err.response.data.message ===
