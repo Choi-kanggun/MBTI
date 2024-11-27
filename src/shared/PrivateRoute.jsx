@@ -5,9 +5,8 @@ const PrivateRoute = () => {
   const { accessToken } = useAuthStore();
 
   if (!accessToken) {
-    alert("로그인 먼저 해주세요.");
     return <Navigate to="/" replace />;
-  } else
+  }
   return <Outlet />;
 };
 

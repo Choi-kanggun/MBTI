@@ -1,10 +1,10 @@
-import React from "react";
 import useAuthStore from "../../stores/useAuthStore";
 import {
   deleteTestResult,
   updateTestResultVisibility,
 } from "../../api/testResults";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import Swal from "sweetalert2";
 
 const TestResultItem = ({ result }) => {
   const userId = useAuthStore((state) => state.userId);
@@ -18,8 +18,11 @@ const TestResultItem = ({ result }) => {
       queryClient.invalidateQueries(["testResults"]);
     },
     onError: (error) => {
-      console.error("공개여부 에러", error);
-      alert("공개여부 에러");
+      Swal.fire({
+        icon: "error",
+        title: error.message,
+        confirmButtonColor: "#429f50",
+      });
     },
   });
 
@@ -29,8 +32,11 @@ const TestResultItem = ({ result }) => {
       queryClient.invalidateQueries(["testResults"]);
     },
     onError: (error) => {
-      console.error("삭제 오류", error);
-      alert("삭제 오류");
+      Swal.fire({
+        icon: "error",
+        title: error.message,
+        confirmButtonColor: "#429f50",
+      });
     },
   });
 

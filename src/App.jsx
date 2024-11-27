@@ -1,7 +1,7 @@
-import React from "react";
 import Router from "./shared/Router";
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
+import "sweetalert2/dist/sweetalert2.min.css";
 
 const GlobalStyle = createGlobalStyle`
   ${reset}

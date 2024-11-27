@@ -1,18 +1,24 @@
-import React from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import useAuthStore from "../../stores/useAuthStore";
+import Swal from "sweetalert2";
 
 const Navigation = () => {
   const navigate = useNavigate();
   const clearAuth = useAuthStore((state) => state.clearAuth);
   const accessToken = useAuthStore((state) => state.accessToken);
-  const onClickLogout = () => {
+
+  const onClickLogout = async () => {
     if (!accessToken) {
       navigate("/login");
     } else {
-      navigate("/");
-      alert("로그아웃 완료!");
       clearAuth();
+
+      await Swal.fire({
+        icon: "success",
+        title: "로그아웃 성공",
+        confirmButtonColor: "#429f50",
+      });
+      navigate("/");
     }
   };
   return (

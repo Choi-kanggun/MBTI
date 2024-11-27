@@ -1,7 +1,8 @@
 import { useMutation } from "@tanstack/react-query";
-import React, { useState } from "react";
+import { useState } from "react";
 import { updateProfile } from "../api/auth";
 import useAuthStore from "../stores/useAuthStore";
+import Swal from "sweetalert2";
 
 const Profile = () => {
   const [newNickname, setNewNickname] = useState("");
@@ -16,17 +17,29 @@ const Profile = () => {
     mutationFn: (newNickname) => updateProfile(accessToken, { newNickname }),
     onSuccess: async (res, newNickname) => {
       await setNickname(newNickname);
-      alert("닉네임이 변경되었습니다.");
+      Swal.fire({
+        icon: "success",
+        title: "닉네임이 변경되었습니다.",
+        confirmButtonColor: "#429f50",
+      });
     },
     onError: (error) => {
-      alert(error.message);
+      Swal.fire({
+        icon: "error",
+        title: error.message,
+        confirmButtonColor: "#429f50",
+      });
     },
   });
 
   const onSubmitChange = async (e) => {
     e.preventDefault();
     if (!newNickname) {
-      alert("닉네임을 입력해주세요");
+      Swal.fire({
+        icon: "warning",
+        title: "닉네임을 입력해주세요.",
+        confirmButtonColor: "#429f50",
+      });
       return;
     } else {
       mutation.mutate(newNickname);

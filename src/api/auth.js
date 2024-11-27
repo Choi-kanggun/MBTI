@@ -54,7 +54,6 @@ export const updateProfile = async (token, userData) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    console.log("성공");
     return data;
   } catch (error) {
     console.error(error);

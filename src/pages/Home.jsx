@@ -1,7 +1,23 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import useAuthStore from "../stores/useAuthStore";
 
 const Home = () => {
+  const accessToken = useAuthStore((store) => store.accessToken);
+  const navigate = useNavigate();
+
+  const onClickTest = async () => {
+    if (accessToken) {
+      navigate("/test");
+    } else {
+      await Swal.fire({
+        icon: "warning",
+        title: "로그인부터 해주세요!",
+        confirmButtonColor: "#429f50",
+      });
+      navigate("/login");
+    }
+  };
   return (
     <div className="flex flex-row justify-center items-start min-h-screen bg-gray-50">
       <div className="w-full bg-gray-50 mt-40 flex-column justify-center px-40 items-center">
@@ -33,7 +49,10 @@ const Home = () => {
         </div>
         <div className="flex justify-center">
           <Link to={"/test"}>
-            <button className="w-80 py-3 mt-10 text-white bg-blue-500 rounded-full hover:bg-blue-600">
+            <button
+              className="w-80 py-3 mt-10 text-white bg-blue-500 rounded-full hover:bg-blue-600"
+              onClick={onClickTest}
+            >
               내 성격 알아보러 가기
             </button>
           </Link>

@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 import useAuthStore from "../stores/useAuthStore";
 import axios from "axios";
 
@@ -18,7 +19,11 @@ authApi.interceptors.request.use(
     return config;
   },
   (err) => {
-    alert(err.response.data.message);
+    Swal.fire({
+      icon: "warning",
+      title: err.response.data.message,
+      confirmButtonColor: "#429f50",
+    });
     if (
       err.response.data.message ===
       "토큰이 만료되었습니다. 다시 로그인 해주세요."
@@ -33,12 +38,14 @@ authApi.interceptors.request.use(
 
 authApi.interceptors.response.use(
   (response) => {
-    console.log(response);
     return response;
   },
   (err) => {
-    console.log(err);
-    alert(err.response.data.message);
+    Swal.fire({
+      icon: "warning",
+      title: err.response.data.message,
+      confirmButtonColor: "#429f50",
+    });
     if (
       err.response.data.message ===
       "토큰이 만료되었습니다. 다시 로그인 해주세요."
