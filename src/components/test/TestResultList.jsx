@@ -12,15 +12,15 @@ export default function TestResultList() {
   });
 
   if (isPending) {
-    return <div>로딩중입니다...</div>;
+    return <div className="mt-28 mb-12 text-center">로딩중입니다...</div>;
   }
   if (isError) {
-    return <div>에러 발생!</div>;
+    return <div className="mt-28 mb-12 text-center">에러 발생!</div>;
   }
 
   return (
     <div className="flex flex-col justify-center min-h-screen bg-gray-50">
-      <div className="my-12 bg-gray-50">
+      <div className="mt-28 mb-12 bg-gray-50">
         <h1 className="text-center text-3xl font-bold">모든 테스트 결과</h1>
       </div>
       {data

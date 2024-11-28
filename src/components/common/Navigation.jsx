@@ -23,26 +23,34 @@ const Navigation = () => {
   };
   return (
     <>
-      <div className="w-full bg-white shadow-lg h-16 flex row justify-between px-40 items-center">
+      <div className="w-full bg-white shadow-md fixed top-0 z-10 h-16 flex justify-between px-40 items-center">
         <Link to={"/"}>
-          <button className="cursor-pointer">홈</button>
+          <span className="text-2xl font-bold text-blue-600 cursor-pointer hover:text-blue-700 transition duration-200">
+            홈
+          </span>
         </Link>
-        <ul className="flex row justify-center items-center ">
+
+        <ul className="flex space-x-6 items-center">
           {accessToken ? (
             <>
-              {" "}
               <Link to={"/profile"}>
-                <li className="p-4 cursor-pointer">프로필</li>
+                <li className="text-gray-700 hover:text-blue-500 transition duration-200 cursor-pointer">
+                  프로필
+                </li>
               </Link>
               <Link to={"/test"}>
-                <li className="p-4 cursor-pointer">테스트</li>
+                <li className="text-gray-700 hover:text-blue-500 transition duration-200 cursor-pointer">
+                  테스트
+                </li>
               </Link>
               <Link to={"/results"}>
-                <li className="p-4 cursor-pointer">결과보기</li>
+                <li className="text-gray-700 hover:text-blue-500 transition duration-200 cursor-pointer">
+                  결과보기
+                </li>
               </Link>
               <button
                 onClick={onClickLogout}
-                className="cursor-pointer p-3 text-white bg-blue-500 rounded-md hover:bg-red-700"
+                className="px-4 py-2 bg-blue-500 text-white rounded-md shadow-md hover:bg-red-600 transition duration-200"
               >
                 로그아웃
               </button>
@@ -50,12 +58,12 @@ const Navigation = () => {
           ) : (
             <>
               <Link to={"/login"}>
-                <button onClick={onClickLogout} className="cursor-pointer p-4">
+                <button className="text-gray-700 px-4 py-2 hover:text-blue-500 transition duration-200 cursor-pointer">
                   로그인
                 </button>
               </Link>
               <Link to={"/signup"}>
-                <button onClick={onClickLogout} className="cursor-pointer p-4">
+                <button className="text-gray-700 px-4 py-2 hover:text-blue-500 transition duration-200 cursor-pointer">
                   회원가입
                 </button>
               </Link>

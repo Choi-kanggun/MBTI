@@ -42,27 +42,31 @@ const TestResultItem = ({ result }) => {
 
   return (
     <div className="flex justify-center">
-      <div className="w-5/12 p-10 mb-10 bg-white rounded-lg shadow-md hover:shadow-lg">
-        <div className="flex justify-between pb-3 mb-3 sm:flex-row sm:items-center">
-          <h4 className="text-2xl font-medium ">닉네임 : {result.nickname}</h4>
-          <p className="text-sm text-black ">{result.date}</p>
+      <div className="w-full max-w-lg p-8 mb-10 rounded-xl bg-gradient-to-r from-blue-50 to-white shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <div className="flex justify-between pb-4 border-b border-gray-300 mb-6 sm:flex-row sm:items-center">
+          <h4 className="text-xl font-bold text-gray-700">{result.nickname}</h4>
+          <p className="text-sm text-gray-500">{result.date}</p>
         </div>
 
-        <p className="mb-4 text-2xl">{result.mbtiResult}</p>
-        <p className="mb-4 text-black leading-loose">{result.description}</p>
+        <p className="mb-6 text-lg font-semibold text-blue-700">
+          {result.mbtiResult}
+        </p>
+        <p className="mb-6 text-gray-600 leading-relaxed">
+          {result.description}
+        </p>
 
         {isOwner && (
-          <div className="flex justify-end space-x-2">
+          <div className="flex justify-end space-x-4">
             <button
               onClick={() => onClickToggleVisibility.mutate(!result.visibility)}
-              className="w-36 py-3 mt-4 text-white bg-blue-500 rounded-md hover:bg-blue-800"
+              className="px-6 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 transition-all duration-200"
             >
               {result.visibility ? "비공개하기" : "공개하기"}
             </button>
 
             <button
               onClick={() => onClickDelete.mutate(result.id)}
-              className="w-20 py-3 mt-4 text-white bg-blue-500 rounded-md hover:bg-red-600"
+              className="px-6 py-2 text-white bg-red-500 rounded-md hover:bg-red-600 transition-all duration-200"
             >
               삭제
             </button>
