@@ -1,6 +1,5 @@
 # MBTI TEST
 
-링크: news-feed-brown.vercel.app
 
 ![image](https://github.com/user-attachments/assets/912cf01a-ae06-4555-b494-de386f34291d)
 
@@ -98,6 +97,7 @@ https://github.com/user-attachments/assets/260b8731-fc27-444f-bf4c-4251b96d80e4
 <img src="https://img.shields.io/badge/tanstackquery-orange">
 <img src="https://img.shields.io/badge/tailwindcss-blue">
 <img src="https://img.shields.io/badge/zustand-black">
+<img src="https://img.shields.io/badge/jsonserver-yellow">
 <img src="https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=Vercel&logoColor=white"/>
 <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white"/>
 <img src="https://img.shields.io/badge/Github-181717?style=flat-square&logo=github&logoColor=white"/>
@@ -108,6 +108,7 @@ https://github.com/user-attachments/assets/260b8731-fc27-444f-bf4c-4251b96d80e4
 <br/>
 
 # 🌳 프로젝트 구조
+```
 📦src
  ┣ 📂api
  ┃ ┣ 📜auth.js
@@ -151,4 +152,4 @@ https://github.com/user-attachments/assets/260b8731-fc27-444f-bf4c-4251b96d80e4
  ┣ 📜App.jsx
  ┣ 📜index.css
  ┗ 📜main.jsx
-
+```
