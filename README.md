@@ -1,10 +1,7 @@
-mbti-orcin.vercel.app
-# 🎧 welcome to Replay 🎧
+# MBTI TEST
 
-### 오늘의 노래를 추천해주는 뉴스피드 프로젝트 
-링크: news-feed-brown.vercel.app
 
-![Macbook Pro - Dark Background](![image](https://github.com/user-attachments/assets/372abf9a-b654-4c9c-bdca-cbca3c10fad0))
+![image](https://github.com/user-attachments/assets/912cf01a-ae06-4555-b494-de386f34291d)
 
 <br/>
 
@@ -88,7 +85,8 @@ https://github.com/user-attachments/assets/260b8731-fc27-444f-bf4c-4251b96d80e4
 <br />
 
 # ⚙️ Development Environment
-`upabase/supabase-js: ^2.46.1` `react-router-dom: ^6.28.0` `styled-components: ^6.1.13` `styled-reset: ^4.5.2` `vite: ^5.4.10`
+`@tanstack/react-query": ^5.61.3` `react-router-dom": ^7.0.1` `styled-components: ^6.1.13` `styled-reset: ^4.5.2` `vite: ^5.4.10` `axios": "^1.7.7` `json-server": "^1.0.0-beta.3`
+`zustand": ^5.0.1`
 
 <br/>
 
@@ -96,17 +94,62 @@ https://github.com/user-attachments/assets/260b8731-fc27-444f-bf4c-4251b96d80e4
 <div>
 <img src="https://img.shields.io/badge/Javascript-F7DF1E?style=flat&logo=Javascript&logoColor=white" />
 <img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=React&logoColor=white" />
-
+<img src="https://img.shields.io/badge/tanstackquery-orange">
+<img src="https://img.shields.io/badge/tailwindcss-blue">
+<img src="https://img.shields.io/badge/zustand-black">
+<img src="https://img.shields.io/badge/jsonserver-yellow">
 <img src="https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=Vercel&logoColor=white"/>
 <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white"/>
 <img src="https://img.shields.io/badge/Github-181717?style=flat-square&logo=github&logoColor=white"/>
 <img src="https://img.shields.io/badge/Notion-000000?style=flat-square&logo=Notion&logoColor=white"/>
-<img src="https://img.shields.io/badge/Slack-4A154B?style=flat-square&logo=Slack&logoColor=white"/>
-<img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=Figma&logoColor=white"/>
+
 </div>
 
 <br/>
 
 # 🌳 프로젝트 구조
-<img width="166" alt="스크린샷 2024-11-21 오전 11 31 45" src="https://github.com/user-attachments/assets/40302776-ddea-428d-835c-3a09e512a989">
-
+```
+📦src
+ ┣ 📂api
+ ┃ ┣ 📜auth.js
+ ┃ ┗ 📜testResults.js
+ ┣ 📂assets
+ ┃ ┗ 📜react.svg
+ ┣ 📂components
+ ┃ ┣ 📂auth
+ ┃ ┃ ┣ 📜LoginForm.jsx
+ ┃ ┃ ┗ 📜SignupForm.jsx
+ ┃ ┣ 📂common
+ ┃ ┃ ┗ 📜Navigation.jsx
+ ┃ ┗ 📂test
+ ┃ ┃ ┣ 📜TestForm.jsx
+ ┃ ┃ ┣ 📜TestResultItem.jsx
+ ┃ ┃ ┗ 📜TestResultList.jsx
+ ┣ 📂data
+ ┃ ┗ 📜questions.js
+ ┣ 📂hooks
+ ┃ ┣ 📜useForm.js
+ ┃ ┣ 📜useProfile.js
+ ┃ ┗ 📜useTest.js
+ ┣ 📂instance
+ ┃ ┗ 📜axiosInstance.js
+ ┣ 📂pages
+ ┃ ┣ 📜Home.jsx
+ ┃ ┣ 📜Login.jsx
+ ┃ ┣ 📜Profile.jsx
+ ┃ ┣ 📜Signup.jsx
+ ┃ ┣ 📜Test.jsx
+ ┃ ┗ 📜TestResult.jsx
+ ┣ 📂shared
+ ┃ ┣ 📜PrivateRoute.jsx
+ ┃ ┗ 📜Router.jsx
+ ┣ 📂stores
+ ┃ ┗ 📜useAuthStore.js
+ ┣ 📂utils
+ ┃ ┣ 📜mbtiCalculator.js
+ ┃ ┗ 📜validation.js
+ ┣ 📜App.css
+ ┣ 📜App.jsx
+ ┣ 📜index.css
+ ┗ 📜main.jsx
+```
