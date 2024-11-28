@@ -6,6 +6,7 @@ const TestForm = ({ onSubmit }) => {
     Array(questions.length).fill({ type: "", answer: "" })
   );
 
+  // 각 문항의 답변 저장
   const handleChange = (index, value) => {
     const newAnswers = [...answers];
     newAnswers[index] = { type: questions[index].type, answer: value };

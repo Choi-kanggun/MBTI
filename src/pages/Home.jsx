@@ -6,10 +6,13 @@ const Home = () => {
   const accessToken = useAuthStore((store) => store.accessToken);
   const navigate = useNavigate();
 
+  // 로그인 여부에 따라 라우팅 설정
   const onClickTest = async () => {
+    // 로그인 되어있다면 test 페이지로 이동
     if (accessToken) {
       navigate("/test");
     } else {
+      // 로그인 정보가 없다면 login 페이지로 이동
       await Swal.fire({
         icon: "warning",
         title: "로그인부터 해주세요!",

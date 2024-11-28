@@ -4,8 +4,9 @@ import { getTestResults } from "../../api/testResults";
 import useAuthStore from "../../stores/useAuthStore";
 
 export default function TestResultList() {
+  // 로그인한 사용자 정보 가져오기
   const userId = useAuthStore((state) => state.userId);
-
+ //tanstack query를 이용하여 json-server에 저장된 테스트 결과 데이터를 가져옴
   const { data, isPending, isError } = useQuery({
     queryKey: ["testResults"],
     queryFn: getTestResults,

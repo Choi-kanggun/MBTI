@@ -1,4 +1,5 @@
 export const validateForm = (name, value) => {
+  // 회원가입, 로그인 유효성 검사
   switch (name) {
     case "id":
       if (value.length < 4 || value.length > 10) {

@@ -7,17 +7,22 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 
 const TestResultItem = ({ result }) => {
+  // 로그인한 사용자 정보 가져오기
   const userId = useAuthStore((state) => state.userId);
   const queryClient = useQueryClient();
+  // 로그인한 사용자 정보와 결과 소유자 정보 확인
   const isOwner = result.userId === userId;
 
+  // 공개 / 비공개 상태 변경 mutation
   const onClickToggleVisibility = useMutation({
     mutationFn: (newVisibility) =>
       updateTestResultVisibility(result.id, newVisibility),
     onSuccess: () => {
+      // 성공 시 캐시된 테스트 결과 목록을 무효화하고 새 데이터를 가져옴
       queryClient.invalidateQueries(["testResults"]);
     },
     onError: (error) => {
+      // 에러 발생 시 alert 알림
       Swal.fire({
         icon: "error",
         title: error.message,
@@ -26,12 +31,15 @@ const TestResultItem = ({ result }) => {
     },
   });
 
+  // 결과 삭제 mutation
   const onClickDelete = useMutation({
     mutationFn: () => deleteTestResult(result.id),
     onSuccess: () => {
+      // 성공 시 캐시된 테스트 결과 목록을 무효화하고 새 데이터를 가져옴
       queryClient.invalidateQueries(["testResults"]);
     },
     onError: (error) => {
+      // 에러 발생 시 alert 알림
       Swal.fire({
         icon: "error",
         title: error.message,

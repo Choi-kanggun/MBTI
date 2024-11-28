@@ -7,9 +7,11 @@ import Swal from "sweetalert2";
 const Signup = () => {
   const navigate = useNavigate();
 
+  // 회원가입 mutation
   const mutation = useMutation({
-    mutationFn: register,
+    mutationFn: register, // register API 호출
     onSuccess: async () => {
+      // 성공 시 알림 후, login 페이지로 이동
       await Swal.fire({
         icon: "success",
         title: "회원가입 완료!",
@@ -18,6 +20,7 @@ const Signup = () => {
       navigate("/login");
     },
     onError: (error) => {
+      // 실패 시, 알림
       Swal.fire({
         icon: "error",
         title: error.message,

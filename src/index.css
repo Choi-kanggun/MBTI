@@ -3,18 +3,18 @@
 @tailwind utilities;
 
 .swal2-popup {
-  font-family: Arial, sans-serif !important; /* SweetAlert2의 기본 폰트 */
+  font-family: Arial, sans-serif !important;
   font-size: 1rem !important;
   line-height: 1.5 !important;
-  box-sizing: border-box !important; /* Reset CSS 영향을 방지 */
-  padding: 1.25em !important; /* SweetAlert2 기본 여백 */
+  box-sizing: border-box !important;
+  padding: 1.25em !important;
   background-color: white !important;
-  border-radius: 0.5rem !important; /* 모서리 둥글게 */
-  color: #545454 !important; /* 기본 텍스트 색상 */
+  border-radius: 0.5rem !important;
+  color: #545454 !important;
 }
 
 .swal2-title {
-  font-size: 1.5rem !important; /* SweetAlert2 제목 크기 */
+  font-size: 1.5rem !important;
   font-weight: bold !important;
   margin-bottom: 1rem !important;
 }
@@ -25,7 +25,7 @@
 
 .swal2-actions .swal2-confirm {
   font-size: 1rem !important;
-  background-color: #429f50 !important; /* 버튼 색상 */
+  background-color: #429f50 !important;
   color: white !important;
   padding: 0.5em 1.25em !important;
   border-radius: 0.25rem !important;

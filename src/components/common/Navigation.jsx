@@ -7,12 +7,15 @@ const Navigation = () => {
   const clearAuth = useAuthStore((state) => state.clearAuth);
   const accessToken = useAuthStore((state) => state.accessToken);
 
+  // 로그아웃 버튼 클릭 시
   const onClickLogout = async () => {
     if (!accessToken) {
+      // 토큰이 없으면 로그인 페이지로 이동
       navigate("/login");
     } else {
+      // 토큰이 있으면 로그아웃 처리 후, 홈으로 이동
       clearAuth();
-
+      // sweetalert 로그아웃 알림창
       await Swal.fire({
         icon: "success",
         title: "로그아웃 성공",

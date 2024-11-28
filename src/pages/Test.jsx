@@ -8,6 +8,7 @@ const Test = () => {
   const navigate = useNavigate();
   const { result, handleTestSubmit } = useTest();
 
+  // 결과 페이지로 이동
   const handleNavigateToResults = () => {
     navigate("/results");
   };

@@ -2,14 +2,17 @@ import Swal from "sweetalert2";
 import useAuthStore from "../stores/useAuthStore";
 import axios from "axios";
 
+// 인증,인가를 위한 api instance 설정
 const authApi = axios.create({
   baseURL: "https://moneyfulpublicpolicy.co.kr",
 });
 
+// 테스트 결과를 관리 할 api instance 설정
 const jsonApi = axios.create({
   baseURL: "https://scratch-assorted-repair.glitch.me",
 });
 
+// 서버에 요청 시, 중간에서 토큰 유효성 검사
 authApi.interceptors.request.use(
   (config) => {
     const accessToken = localStorage.getItem("accessToken");
@@ -36,6 +39,7 @@ authApi.interceptors.request.use(
   }
 );
 
+// 서버에서 응답 시, 중간에서 토큰 유효성 검사
 authApi.interceptors.response.use(
   (response) => {
     return response;
